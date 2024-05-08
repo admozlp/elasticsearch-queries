@@ -6,6 +6,7 @@ import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
 import com.ademozalp.elasticsearch.dto.FieldAndValueDto;
 import com.ademozalp.elasticsearch.dto.FieldAndValueMapDto;
+import com.ademozalp.elasticsearch.dto.ProductDto;
 import com.ademozalp.elasticsearch.model.Product;
 import com.ademozalp.elasticsearch.repository.ProductRepository;
 import com.ademozalp.elasticsearch.util.ESUtil;
@@ -35,50 +36,73 @@ public class ProductService {
         productRepository.saveAll(products);
     }
 
-    public Product createIndex(Product product){
-        return productRepository.save(product);
+    public ProductDto createIndex(Product product){
+        Product savedProduct = productRepository.save(product);
+        return new ProductDto(savedProduct.getId(), savedProduct.getName(), savedProduct.getPrice(),
+                savedProduct.getDescription(), savedProduct.getPoint());
     }
 
-    public Iterable<Product> getAllProducts(){
-        return productRepository.findAll();
+    public List<ProductDto> getAllProducts(){
+        List<ProductDto> products = new ArrayList<>();
+
+        productRepository.findAll().forEach(product ->
+                products.add(new ProductDto(product.getId(), product.getName(), product.getPrice(),
+                    product.getDescription(), product.getPoint()))
+        );
+
+        return products;
     }
 
-    public List<Product> getAllProductsFromAllIndexes(){
+    public List<ProductDto> getAllProductsFromAllIndexes(){
         try {
             Query query = ESUtil.createMatchAllQuery();
+
             SearchResponse<Product> response = elasticsearchClient.search(q -> q.query(query), Product.class);
-            return extractProductsFromResponse(response);
+
+            List<Product> products = extractProductsFromResponse(response);
+
+            return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
+                    product.getDescription(), product.getPoint())).toList();
         }catch (IOException e){
             throw new RuntimeException(e);
         }
     }
 
-    public List<Product> getAllDataFromIndex(String indexName){
+    public List<ProductDto> getAllDataFromIndex(String indexName){
         try {
             Query query = ESUtil.createMatchAllQuery();
             SearchResponse<Product> response = elasticsearchClient
                     .search(q -> q.index(indexName).query(query), Product.class);
-            return extractProductsFromResponse(response);
+
+            List<Product> products = extractProductsFromResponse(response);
+
+            return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
+                    product.getDescription(), product.getPoint())).toList();
         }catch (IOException e){
             throw new RuntimeException(e);
         }
     }
 
-    public List<Product> searchProductsByFieldAndValue(FieldAndValueDto fieldAndValueDto){
+    public List<ProductDto> searchProductsByFieldAndValue(FieldAndValueDto fieldAndValueDto){
         try {
             Supplier<Query> querySupplier = ESUtil.buildQueryForFieldAndValue(fieldAndValueDto.field(), fieldAndValueDto.value());
             SearchResponse<Product> response =
                     elasticsearchClient.search(q -> q.index("products_index").query(querySupplier.get()), Product.class);
-            return extractProductsFromResponse(response);
+
+            List<Product> products = extractProductsFromResponse(response);
+
+            return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
+                    product.getDescription(), product.getPoint())).toList();
         }catch (IOException e){
             throw new RuntimeException(e);
         }
     }
 
 
-    public Set<Product> boolQueryFieldAndValue(FieldAndValueMapDto fieldAndValueMapDto){
+    public Set<ProductDto> boolQueryFieldAndValue(FieldAndValueMapDto fieldAndValueMapDto){
         try {
             Set<Product> products = new HashSet<>();
+
             for (Map.Entry<String, String> entry : fieldAndValueMapDto.fieldAndValueMap().entrySet()){
                 Supplier<Query> querySupplier = ESUtil.createBoolQuery(entry.getKey(), entry.getValue());
 
@@ -88,7 +112,9 @@ public class ProductService {
                 products.addAll(extractProductsFromResponse(response));
             }
 
-            return products;
+            return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
+                    product.getDescription(), product.getPoint())).collect(Collectors.toSet());
+
         }catch (IOException e){
             throw new RuntimeException(e);
         }

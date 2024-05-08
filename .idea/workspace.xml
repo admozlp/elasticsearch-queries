@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d1ce864-9ada-40d9-a635-cdc6ad66ae8d" name="Changes" comment="" />
+    <list default="true" id="7d1ce864-9ada-40d9-a635-cdc6ad66ae8d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/service/ProductService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +42,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;admozlp&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/admozlp/elasticsearch-queries.git&quot;,
+    &quot;accountId&quot;: &quot;07cc96aa-c67e-4597-9bb4-489190873780&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2farzTwqaHrRmiIQZnA05PrrQ0D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,6 +75,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.ElasticsearchApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/adem/javaProjects/elasticsearch&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -61,6 +83,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -107,7 +132,10 @@
       <workItem from="1714936208365" duration="20000" />
       <workItem from="1714936236970" duration="54000" />
       <workItem from="1714936334758" duration="3286000" />
-      <workItem from="1714983419244" duration="13019000" />
+      <workItem from="1714983419244" duration="13719000" />
+      <workItem from="1715015995261" duration="2068000" />
+      <workItem from="1715165650019" duration="15000" />
+      <workItem from="1715165674495" duration="1168000" />
     </task>
     <servers />
   </component>
