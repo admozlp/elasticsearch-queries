@@ -7,6 +7,7 @@ import co.elastic.clients.elasticsearch.core.search.Hit;
 import com.ademozalp.elasticsearch.dto.FieldAndValueDto;
 import com.ademozalp.elasticsearch.dto.FieldAndValueMapDto;
 import com.ademozalp.elasticsearch.dto.ProductDto;
+import com.ademozalp.elasticsearch.exception.types.ElasticSearchQueryException;
 import com.ademozalp.elasticsearch.model.Product;
 import com.ademozalp.elasticsearch.repository.ProductRepository;
 import com.ademozalp.elasticsearch.util.ESUtil;
@@ -64,7 +65,7 @@ public class ProductService {
             return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
                     product.getDescription(), product.getPoint())).toList();
         }catch (IOException e){
-            throw new RuntimeException(e);
+            throw new ElasticSearchQueryException(e.getMessage());
         }
     }
 
@@ -79,7 +80,7 @@ public class ProductService {
             return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
                     product.getDescription(), product.getPoint())).toList();
         }catch (IOException e){
-            throw new RuntimeException(e);
+            throw new ElasticSearchQueryException(e.getMessage());
         }
     }
 
@@ -94,7 +95,7 @@ public class ProductService {
             return products.stream().map(product -> new ProductDto(product.getId(), product.getName(), product.getPrice(),
                     product.getDescription(), product.getPoint())).toList();
         }catch (IOException e){
-            throw new RuntimeException(e);
+            throw new ElasticSearchQueryException(e.getMessage());
         }
     }
 
@@ -116,7 +117,7 @@ public class ProductService {
                     product.getDescription(), product.getPoint())).collect(Collectors.toSet());
 
         }catch (IOException e){
-            throw new RuntimeException(e);
+            throw new ElasticSearchQueryException(e.getMessage());
         }
     }
 
@@ -133,7 +134,7 @@ public class ProductService {
                     .map(Product::getName)
                     .collect(Collectors.toSet());
         }catch (IOException e){
-            throw new RuntimeException(e);
+            throw new ElasticSearchQueryException(e.getMessage());
         }
     }
 

@@ -1,6 +1,5 @@
 package com.ademozalp.elasticsearch.util;
 
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
