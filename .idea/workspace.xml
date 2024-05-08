@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d1ce864-9ada-40d9-a635-cdc6ad66ae8d" name="Changes" comment="Response icin record eklendi">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/util/LoggingAop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    <list default="true" id="7d1ce864-9ada-40d9-a635-cdc6ad66ae8d" name="Changes" comment="Loglama aop ile tamamlandi">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/dto/ErrorResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/exception/types/ElasticSearchQueryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/exception/types/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/util/LoggingAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ademozalp/elasticsearch/util/LoggingAop.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +96,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ademozalp.elasticsearch.exception.types" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ElasticsearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="elasticsearch.main" />
@@ -133,7 +142,7 @@
       <workItem from="1714983419244" duration="13719000" />
       <workItem from="1715015995261" duration="2068000" />
       <workItem from="1715165650019" duration="15000" />
-      <workItem from="1715165674495" duration="2645000" />
+      <workItem from="1715165674495" duration="3599000" />
     </task>
     <task id="LOCAL-00001" summary="Response icin record eklendi">
       <option name="closed" value="true" />
@@ -143,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715166864460</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Loglama aop ile tamamlandi">
+      <option name="closed" value="true" />
+      <created>1715168554532</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715168554532</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +168,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Response icin record eklendi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Response icin record eklendi" />
+    <MESSAGE value="Loglama aop ile tamamlandi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Loglama aop ile tamamlandi" />
   </component>
 </project>
